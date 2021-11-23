@@ -10,7 +10,8 @@ const firebaseConfig = {
       measurementId: "G-94BRTH17RR"
     };
 firebase.initializeApp(firebaseConfig)
-
+var user = localStorage.getItem("Username")
+document.getElementById("Username").innerHTML = "Welcome " + user + "!"
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
        Room_names = childKey;
       //Start code
@@ -18,3 +19,11 @@ function getData() {firebase.database().ref("/").on('value', function(snapshot) 
       //End code
       });});}
 getData();
+function addroom()
+{
+      room = document.getElementById("roomadd").value
+      firebase.database().ref("/").child(room).update({
+            purpose: "adduser"
+      })
+      localStorage.setItem("room", room)
+}
