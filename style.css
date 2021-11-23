@@ -48,7 +48,10 @@ background-image: linear-gradient(to right top, #33f15c, #67d925, #18c12e, #0aaa
 
 #output
 {
-	padding: 10px; width:80%;background: rgba(255,255,255,0.8);border-radius: 15px;
+	padding: 10px;
+	width:80%;
+	background: rgba(229, 255, 0, 0.493);
+	border-radius: 15px;
 }
 
 .input_div_room_page
